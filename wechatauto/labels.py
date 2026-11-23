@@ -75,6 +75,9 @@ DETAIL_CELL_CLS = "mmui::ContactsManagerDetailCell"       # name='昵称  标签
 DETAIL_LIST_CLS = "mmui::ContactsManagerDetailView"
 DETAIL_HEADER_CLS = "mmui::ContactsManagerHBoxlayoutClickArea"
 PICKER_ROW_CLS = "mmui::SPSelectionContactRow"            # CheckBoxControl
+# v1.3.0 重构 labels.py 时移除了该常量，但 forward.py:_check_row 仍在导入，
+# 导致 v1.3.0 / v1.3.0.1 的转发功能整体 ImportError。恢复 v1.2.10 的实测值。
+CHECKBOX_INSET_PX = 70        # 转发选择框成员行：行左缘 +70px 为复选框
 # 在选择框里**搜过之后**，结果行换了个类名（实测 4.1.15.13：容器也从
 # StickyHeaderRecyclerListView 变成 SearchContactView/XTableView）
 PICKER_SEARCH_ROW_CLS = "mmui::SearchContactCellView"
